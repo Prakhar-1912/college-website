@@ -420,50 +420,6 @@ export default function ContactPage(): JSX.Element {
               </Paper>
             </Grid>
           </Grid>
-
-          {/* Google Map */}
-          <Box sx={{ mt: 6 }}>
-            <Typography
-              variant="h4"
-              sx={{
-                fontWeight: 600,
-                mb: 3,
-                color: 'text.primary',
-              }}
-            >
-              Find Us on Map
-            </Typography>
-            <Paper
-              elevation={0}
-              sx={{
-                border: '1px solid',
-                borderColor: 'divider',
-                overflow: 'hidden',
-                height: { xs: '300px', md: '450px' },
-              }}
-            >
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3623.8982841891957!2d80.88446687538088!3d24.724919978154094!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39845ed1c49a8ed1%3A0x9e3b8e5e8b5a8e5e!2sKedarnath%20Ramswaroop%20Mahavidyalaya!5e0!3m2!1sen!2sin!4v1705578000000!5m2!1sen!2sin"
-                width="100%"
-                height="100%"
-                style={{ border: 0 }}
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                title="Kedarnath Ramswaroop Mahavidyalaya Location - Khatwara, Chitrakoot"
-              />
-            </Paper>
-            <Typography
-              variant="body2"
-              sx={{
-                mt: 2,
-                color: 'text.secondary',
-                fontStyle: 'italic',
-              }}
-            >
-              Karwi Pahadi Road, Khatwara, Rajapur, Chitrakoot, Uttar Pradesh - 210207
-            </Typography>
-          </Box>
         </Container>
       </Box>
     </>
