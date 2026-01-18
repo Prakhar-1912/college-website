@@ -21,7 +21,7 @@ interface ContactFormData {
   name: string;
   email: string;
   phone: string;
-  subject: string;
+  course: string;
   message: string;
 }
 
@@ -66,7 +66,7 @@ export default function ContactPage(): JSX.Element {
       name: '',
       email: '',
       phone: '',
-      subject: '',
+      course: '',
       message: '',
     },
   });
@@ -334,16 +334,16 @@ export default function ContactPage(): JSX.Element {
 
                     <Grid item xs={12} sm={6}>
                       <Controller
-                        name="subject"
+                        name="course"
                         control={control}
-                        rules={{ required: 'Subject is required' }}
+                        rules={{ required: 'Course is required' }}
                         render={({ field }) => (
                           <TextField
                             {...field}
                             fullWidth
-                            label="Subject"
-                            error={!!errors.subject}
-                            helperText={errors.subject?.message}
+                            label="Course"
+                            error={!!errors.course}
+                            helperText={errors.course?.message}
                             disabled={submitStatus === 'loading'}
                           />
                         )}
@@ -443,14 +443,14 @@ export default function ContactPage(): JSX.Element {
               }}
             >
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14485.234567890123!2d80.8!3d25.2!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjXCsDEyJzAwLjAiTiA4MMKwNDgnMDAuMCJF!5e0!3m2!1sen!2sin!4v1234567890123!5m2!1sen!2sin"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3623.8982841891957!2d80.88446687538088!3d24.724919978154094!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39845ed1c49a8ed1%3A0x9e3b8e5e8b5a8e5e!2sKedarnath%20Ramswaroop%20Mahavidyalaya!5e0!3m2!1sen!2sin!4v1705578000000!5m2!1sen!2sin"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="College Location"
+                title="Kedarnath Ramswaroop Mahavidyalaya Location - Khatwara, Chitrakoot"
               />
             </Paper>
             <Typography
@@ -461,7 +461,7 @@ export default function ContactPage(): JSX.Element {
                 fontStyle: 'italic',
               }}
             >
-              Karwi Pahadi Road, Khatwara, Majra, Chitrakoot, Uttar Pradesh - 210207
+              Karwi Pahadi Road, Khatwara, Rajapur, Chitrakoot, Uttar Pradesh - 210207
             </Typography>
           </Box>
         </Container>

@@ -21,7 +21,7 @@ interface ContactFormData {
   name: string;
   email: string;
   phone: string;
-  subject: string;
+  course: string;
   message: string;
 }
 
@@ -66,7 +66,7 @@ const Contact: React.FC = () => {
       name: '',
       email: '',
       phone: '',
-      subject: '',
+      course: '',
       message: '',
     },
   });
@@ -290,16 +290,16 @@ const Contact: React.FC = () => {
 
                   <Grid item xs={12} sm={6}>
                     <Controller
-                      name="subject"
+                      name="course"
                       control={control}
-                      rules={{ required: 'Subject is required' }}
+                      rules={{ required: 'Course is required' }}
                       render={({ field }) => (
                         <TextField
                           {...field}
                           fullWidth
-                          label="Subject"
-                          error={!!errors.subject}
-                          helperText={errors.subject?.message}
+                          label="Course"
+                          error={!!errors.course}
+                          helperText={errors.course?.message}
                           disabled={submitStatus === 'loading'}
                         />
                       )}

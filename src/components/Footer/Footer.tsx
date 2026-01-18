@@ -92,7 +92,7 @@ const Footer: React.FC = () => {
               <Box sx={{ display: 'flex', alignItems: 'flex-start' }}>
                 <LocationOnIcon sx={{ mr: 1, fontSize: 20, opacity: 0.9 }} />
                 <Typography variant="body2" sx={{ opacity: 0.9, lineHeight: 1.6 }}>
-                  Karwi Pahadi Road, Khatwara, Majra, Chitrakoot, U.P - 210207
+                  Karwi Pahadi Road, Khatwara, Rajapur, Chitrakoot, U.P - 210207
                 </Typography>
               </Box>
               <Box sx={{ display: 'flex', alignItems: 'flex-start' }}>
