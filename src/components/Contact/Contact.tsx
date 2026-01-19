@@ -1,6 +1,6 @@
-'use client';
+"use client";
 
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import {
   Box,
   Container,
@@ -11,11 +11,11 @@ import {
   Paper,
   Alert,
   CircularProgress,
-} from '@mui/material';
-import { useForm, Controller } from 'react-hook-form';
-import LocationOnIcon from '@mui/icons-material/LocationOn';
-import PhoneIcon from '@mui/icons-material/Phone';
-import EmailIcon from '@mui/icons-material/Email';
+} from "@mui/material";
+import { useForm, Controller } from "react-hook-form";
+import LocationOnIcon from "@mui/icons-material/LocationOn";
+import PhoneIcon from "@mui/icons-material/Phone";
+import EmailIcon from "@mui/icons-material/Email";
 
 interface ContactFormData {
   name: string;
@@ -35,26 +35,28 @@ interface ContactInfo {
 const contactInfo: ContactInfo[] = [
   {
     icon: <LocationOnIcon />,
-    title: 'Address',
-    content: 'Karwi Pahadi Road, Khatwara, Majra, Chitrakoot, U.P - 210207',
+    title: "Address",
+    content: "Karwi Pahadi Road, Khatwara, Rajapur, Chitrakoot, U.P - 210207",
   },
   {
     icon: <PhoneIcon />,
-    title: 'Phone',
-    content: '+91-7379620547 / +91-7897133714 / +91-9452872317',
-    link: 'tel:+917379620547',
+    title: "Phone",
+    content: "+91-7379620547 / +91-7897133714 / +91-9452872317",
+    link: "tel:+917379620547",
   },
   {
     icon: <EmailIcon />,
-    title: 'Email',
-    content: 'krd.chitrakoot@gmail.com',
-    link: 'mailto:krd.chitrakoot@gmail.com',
+    title: "Email",
+    content: "krd.chitrakoot@gmail.com",
+    link: "mailto:krd.chitrakoot@gmail.com",
   },
 ];
 
 const Contact: React.FC = () => {
-  const [submitStatus, setSubmitStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
-  const [errorMessage, setErrorMessage] = useState<string>('');
+  const [submitStatus, setSubmitStatus] = useState<
+    "idle" | "loading" | "success" | "error"
+  >("idle");
+  const [errorMessage, setErrorMessage] = useState<string>("");
 
   const {
     control,
@@ -63,23 +65,23 @@ const Contact: React.FC = () => {
     formState: { errors },
   } = useForm<ContactFormData>({
     defaultValues: {
-      name: '',
-      email: '',
-      phone: '',
-      course: '',
-      message: '',
+      name: "",
+      email: "",
+      phone: "",
+      course: "",
+      message: "",
     },
   });
 
   const onSubmit = async (data: ContactFormData): Promise<void> => {
-    setSubmitStatus('loading');
-    setErrorMessage('');
+    setSubmitStatus("loading");
+    setErrorMessage("");
 
     try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
+      const response = await fetch("/api/contact", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify(data),
       });
@@ -87,20 +89,24 @@ const Contact: React.FC = () => {
       const result = await response.json();
 
       if (response.ok) {
-        setSubmitStatus('success');
+        setSubmitStatus("success");
         reset();
         setTimeout(() => {
-          setSubmitStatus('idle');
+          setSubmitStatus("idle");
         }, 5000);
       } else {
-        throw new Error(result.error || 'Failed to send message');
+        throw new Error(result.error || "Failed to send message");
       }
     } catch (error) {
-      setSubmitStatus('error');
-      setErrorMessage(error instanceof Error ? error.message : 'Failed to send message. Please try again.');
+      setSubmitStatus("error");
+      setErrorMessage(
+        error instanceof Error
+          ? error.message
+          : "Failed to send message. Please try again.",
+      );
       setTimeout(() => {
-        setSubmitStatus('idle');
-        setErrorMessage('');
+        setSubmitStatus("idle");
+        setErrorMessage("");
       }, 5000);
     }
   };
@@ -110,17 +116,17 @@ const Contact: React.FC = () => {
       id="contact"
       sx={{
         py: 10,
-        backgroundColor: 'background.paper',
+        backgroundColor: "background.paper",
       }}
     >
       <Container maxWidth="lg">
-        <Box sx={{ textAlign: 'center', mb: 8 }}>
+        <Box sx={{ textAlign: "center", mb: 8 }}>
           <Typography
             variant="h2"
             component="h2"
             gutterBottom
             sx={{
-              color: 'primary.main',
+              color: "primary.main",
               fontWeight: 700,
               mb: 2,
             }}
@@ -130,13 +136,13 @@ const Contact: React.FC = () => {
           <Typography
             variant="h6"
             sx={{
-              color: 'text.secondary',
-              maxWidth: '700px',
-              mx: 'auto',
+              color: "text.secondary",
+              maxWidth: "700px",
+              mx: "auto",
             }}
           >
-            Have questions? We'd love to hear from you. Send us a message and we'll
-            respond as soon as possible.
+            Have questions? We'd love to hear from you. Send us a message and
+            we'll respond as soon as possible.
           </Typography>
         </Box>
 
@@ -149,19 +155,19 @@ const Contact: React.FC = () => {
                 sx={{
                   p: 3,
                   mb: 2,
-                  border: '1px solid',
-                  borderColor: 'divider',
-                  transition: 'all 0.3s',
-                  '&:hover': {
-                    borderColor: 'primary.main',
-                    transform: 'translateX(4px)',
+                  border: "1px solid",
+                  borderColor: "divider",
+                  transition: "all 0.3s",
+                  "&:hover": {
+                    borderColor: "primary.main",
+                    transform: "translateX(4px)",
                   },
                 }}
               >
-                <Box sx={{ display: 'flex', alignItems: 'flex-start' }}>
+                <Box sx={{ display: "flex", alignItems: "flex-start" }}>
                   <Box
                     sx={{
-                      color: 'primary.main',
+                      color: "primary.main",
                       mr: 2,
                       mt: 0.5,
                     }}
@@ -174,7 +180,7 @@ const Contact: React.FC = () => {
                       sx={{
                         fontWeight: 600,
                         mb: 1,
-                        color: 'text.primary',
+                        color: "text.primary",
                       }}
                     >
                       {info.title}
@@ -184,10 +190,10 @@ const Contact: React.FC = () => {
                         component="a"
                         href={info.link}
                         sx={{
-                          color: 'text.secondary',
-                          textDecoration: 'none',
-                          '&:hover': {
-                            color: 'primary.main',
+                          color: "text.secondary",
+                          textDecoration: "none",
+                          "&:hover": {
+                            color: "primary.main",
                           },
                         }}
                       >
@@ -197,7 +203,7 @@ const Contact: React.FC = () => {
                       <Typography
                         variant="body2"
                         sx={{
-                          color: 'text.secondary',
+                          color: "text.secondary",
                           lineHeight: 1.6,
                         }}
                       >
@@ -215,8 +221,8 @@ const Contact: React.FC = () => {
               elevation={0}
               sx={{
                 p: { xs: 3, md: 4 },
-                border: '1px solid',
-                borderColor: 'divider',
+                border: "1px solid",
+                borderColor: "divider",
               }}
             >
               <form onSubmit={handleSubmit(onSubmit)}>
@@ -225,7 +231,7 @@ const Contact: React.FC = () => {
                     <Controller
                       name="name"
                       control={control}
-                      rules={{ required: 'Name is required' }}
+                      rules={{ required: "Name is required" }}
                       render={({ field }) => (
                         <TextField
                           {...field}
@@ -233,7 +239,7 @@ const Contact: React.FC = () => {
                           label="Full Name"
                           error={!!errors.name}
                           helperText={errors.name?.message}
-                          disabled={submitStatus === 'loading'}
+                          disabled={submitStatus === "loading"}
                         />
                       )}
                     />
@@ -244,10 +250,10 @@ const Contact: React.FC = () => {
                       name="email"
                       control={control}
                       rules={{
-                        required: 'Email is required',
+                        required: "Email is required",
                         pattern: {
                           value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                          message: 'Invalid email address',
+                          message: "Invalid email address",
                         },
                       }}
                       render={({ field }) => (
@@ -258,7 +264,7 @@ const Contact: React.FC = () => {
                           type="email"
                           error={!!errors.email}
                           helperText={errors.email?.message}
-                          disabled={submitStatus === 'loading'}
+                          disabled={submitStatus === "loading"}
                         />
                       )}
                     />
@@ -269,10 +275,10 @@ const Contact: React.FC = () => {
                       name="phone"
                       control={control}
                       rules={{
-                        required: 'Phone number is required',
+                        required: "Phone number is required",
                         pattern: {
                           value: /^[0-9]{10}$/,
-                          message: 'Invalid phone number (10 digits required)',
+                          message: "Invalid phone number (10 digits required)",
                         },
                       }}
                       render={({ field }) => (
@@ -282,7 +288,7 @@ const Contact: React.FC = () => {
                           label="Phone Number"
                           error={!!errors.phone}
                           helperText={errors.phone?.message}
-                          disabled={submitStatus === 'loading'}
+                          disabled={submitStatus === "loading"}
                         />
                       )}
                     />
@@ -292,7 +298,7 @@ const Contact: React.FC = () => {
                     <Controller
                       name="course"
                       control={control}
-                      rules={{ required: 'Course is required' }}
+                      rules={{ required: "Course is required" }}
                       render={({ field }) => (
                         <TextField
                           {...field}
@@ -300,7 +306,7 @@ const Contact: React.FC = () => {
                           label="Course"
                           error={!!errors.course}
                           helperText={errors.course?.message}
-                          disabled={submitStatus === 'loading'}
+                          disabled={submitStatus === "loading"}
                         />
                       )}
                     />
@@ -311,10 +317,10 @@ const Contact: React.FC = () => {
                       name="message"
                       control={control}
                       rules={{
-                        required: 'Message is required',
+                        required: "Message is required",
                         minLength: {
                           value: 10,
-                          message: 'Message must be at least 10 characters',
+                          message: "Message must be at least 10 characters",
                         },
                       }}
                       render={({ field }) => (
@@ -326,25 +332,26 @@ const Contact: React.FC = () => {
                           rows={4}
                           error={!!errors.message}
                           helperText={errors.message?.message}
-                          disabled={submitStatus === 'loading'}
+                          disabled={submitStatus === "loading"}
                         />
                       )}
                     />
                   </Grid>
 
-                  {submitStatus === 'success' && (
+                  {submitStatus === "success" && (
                     <Grid item xs={12}>
                       <Alert severity="success">
-                        Thank you! Your message has been sent successfully. We'll get back
-                        to you soon.
+                        Thank you! Your message has been sent successfully.
+                        We'll get back to you soon.
                       </Alert>
                     </Grid>
                   )}
 
-                  {submitStatus === 'error' && (
+                  {submitStatus === "error" && (
                     <Grid item xs={12}>
                       <Alert severity="error">
-                        {errorMessage || 'Failed to send message. Please try again.'}
+                        {errorMessage ||
+                          "Failed to send message. Please try again."}
                       </Alert>
                     </Grid>
                   )}
@@ -355,20 +362,24 @@ const Contact: React.FC = () => {
                       variant="contained"
                       size="large"
                       fullWidth
-                      disabled={submitStatus === 'loading'}
+                      disabled={submitStatus === "loading"}
                       sx={{
                         py: 1.5,
-                        fontSize: '1.1rem',
+                        fontSize: "1.1rem",
                         fontWeight: 600,
                       }}
                     >
-                      {submitStatus === 'loading' ? (
+                      {submitStatus === "loading" ? (
                         <>
-                          <CircularProgress size={24} sx={{ mr: 1 }} color="inherit" />
+                          <CircularProgress
+                            size={24}
+                            sx={{ mr: 1 }}
+                            color="inherit"
+                          />
                           Sending...
                         </>
                       ) : (
-                        'Send Message'
+                        "Send Message"
                       )}
                     </Button>
                   </Grid>
