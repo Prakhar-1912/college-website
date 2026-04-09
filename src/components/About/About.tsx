@@ -115,6 +115,12 @@ const committees: Committee[] = [
         mobile: "9839278081",
       },
       {
+        sno: 7,
+        name: "Mr. Aditya Tripathi",
+        designation: "Student Member",
+        mobile: "8022145478",
+      },
+      {
         sno: 8,
         name: "Miss. Reeta Singh",
         designation: "Student Member",
@@ -160,6 +166,12 @@ const committees: Committee[] = [
         name: "Smt. Rekha Dwivedi",
         designation: "Member",
         mobile: "9839278081",
+      },
+      {
+        sno: 7,
+        name: "Mr. Aditya Tripathi",
+        designation: "Student Member",
+        mobile: "8022145478",
       },
       {
         sno: 8,
@@ -209,6 +221,12 @@ const committees: Committee[] = [
         mobile: "9839278081",
       },
       {
+        sno: 7,
+        name: "Mr. Aditya Tripathi",
+        designation: "Student Member",
+        mobile: "8022145478",
+      },
+      {
         sno: 8,
         name: "Miss. Reeta Singh",
         designation: "Student Member",
@@ -256,6 +274,12 @@ const committees: Committee[] = [
         mobile: "9839278081",
       },
       {
+        sno: 7,
+        name: "Mr. Aditya Tripathi",
+        designation: "Student Member",
+        mobile: "8022145478",
+      },
+      {
         sno: 8,
         name: "Miss. Reeta Singh",
         designation: "Student Member",
@@ -301,6 +325,12 @@ const committees: Committee[] = [
         name: "Smt. Rekha Dwivedi",
         designation: "Member",
         mobile: "9839278081",
+      },
+      {
+        sno: 7,
+        name: "Mr. Aditya Tripathi",
+        designation: "Student Member",
+        mobile: "8022145478",
       },
       {
         sno: 8,
