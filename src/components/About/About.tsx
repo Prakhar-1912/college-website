@@ -10,6 +10,7 @@ import {
   Card,
   CardContent,
   Avatar,
+<<<<<<< Updated upstream
   Table,
   TableBody,
   TableCell,
@@ -25,6 +26,12 @@ import TrackChangesIcon from "@mui/icons-material/TrackChanges";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import GroupsIcon from "@mui/icons-material/Groups";
 import PhoneIcon from "@mui/icons-material/Phone";
+=======
+} from '@mui/material';
+import VisibilityIcon from '@mui/icons-material/Visibility';
+import TrackChangesIcon from '@mui/icons-material/TrackChanges';
+import PhoneIcon from '@mui/icons-material/Phone';
+>>>>>>> Stashed changes
 
 interface Administrator {
   name: string;
@@ -32,18 +39,6 @@ interface Administrator {
   designation: string;
   mobile: string;
   image: string;
-}
-
-interface CommitteeMember {
-  sno: number;
-  name: string;
-  designation: string;
-  mobile: string;
-}
-
-interface Committee {
-  title: string;
-  members: CommitteeMember[];
 }
 
 const administrators: Administrator[] = [
@@ -74,6 +69,7 @@ const administrators: Administrator[] = [
   },
 ];
 
+<<<<<<< Updated upstream
 const committees: Committee[] = [
   {
     title: "Anti Ragging Committee",
@@ -342,6 +338,8 @@ const committees: Committee[] = [
   },
 ];
 
+=======
+>>>>>>> Stashed changes
 const About: React.FC = () => {
   return (
     <Box
@@ -678,6 +676,7 @@ const About: React.FC = () => {
           </Grid>
         </Box>
 
+<<<<<<< Updated upstream
         {/* Committees Section */}
         <Box>
           <Box sx={{ textAlign: "center", mb: 6 }}>
@@ -838,6 +837,8 @@ const About: React.FC = () => {
             ))}
           </Box>
         </Box>
+=======
+>>>>>>> Stashed changes
       </Container>
     </Box>
   );

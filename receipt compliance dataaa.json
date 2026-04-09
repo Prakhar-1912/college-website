@@ -1,0 +1,48 @@
+{
+"select * from \"ReceiptCompliances\"": [
+	{
+		"id" : "48cb1c84-2941-42f2-b30c-ea6e81e037b7",
+		"receiptId" : "630865f1-bae1-48c9-9d5e-5908dd824789",
+		"transactionId" : "cd007932-eee6-4af3-b7c7-51f3c7085e03",
+		"corporateId" : "ed0ca1f8-f964-4518-9f75-5a01efdeca9f",
+		"receiptType" : "SIMPLIFIED_CORPORATE_TAX_INVOICE",
+		"documentStatus" : "COMPLETE",
+		"receiptAmount" : 500.00,
+		"lastTriggerSource" : "SYSTEM",
+		"lastTriggeredBy" : null,
+		"lastTriggeredAt" : "2026-01-19T10:52:21.448Z",
+		"deletedAt" : "2026-01-19T11:42:04.707Z",
+		"createdAt" : "2026-01-19T10:52:21.448Z",
+		"updatedAt" : "2026-01-19T10:52:21.462Z"
+	},
+	{
+		"id" : "40d0330c-49ec-4a22-92ba-6987c6bc4714",
+		"receiptId" : "b05ae679-f9e3-4e84-bca6-a5cafad9ccc9",
+		"transactionId" : "cd007932-eee6-4af3-b7c7-51f3c7085e03",
+		"corporateId" : "ed0ca1f8-f964-4518-9f75-5a01efdeca9f",
+		"receiptType" : "SIMPLIFIED_CORPORATE_TAX_INVOICE",
+		"documentStatus" : "COMPLETE",
+		"receiptAmount" : 400.00,
+		"lastTriggerSource" : "USER",
+		"lastTriggeredBy" : "e6803a0c-81df-454a-842b-aa62c5a66962",
+		"lastTriggeredAt" : "2026-01-20T06:59:53.132Z",
+		"deletedAt" : null,
+		"createdAt" : "2026-01-19T10:50:30.327Z",
+		"updatedAt" : "2026-01-20T06:59:53.132Z"
+	},
+	{
+		"id" : "2054f56a-9645-475b-9fac-e8de5a9843d0",
+		"receiptId" : "1348711c-0e8a-42eb-8819-d3c7a0305b41",
+		"transactionId" : "cd007932-eee6-4af3-b7c7-51f3c7085e03",
+		"corporateId" : "ed0ca1f8-f964-4518-9f75-5a01efdeca9f",
+		"receiptType" : "SIMPLIFIED_CORPORATE_TAX_INVOICE",
+		"documentStatus" : "COMPLETE",
+		"receiptAmount" : 100.00,
+		"lastTriggerSource" : "USER",
+		"lastTriggeredBy" : "e6803a0c-81df-454a-842b-aa62c5a66962",
+		"lastTriggeredAt" : "2026-01-19T11:28:48.863Z",
+		"deletedAt" : null,
+		"createdAt" : "2026-01-19T10:44:09.883Z",
+		"updatedAt" : "2026-01-19T11:28:48.863Z"
+	}
+]}

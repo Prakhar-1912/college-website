@@ -8,6 +8,7 @@ import CssBaseline from '@mui/material/CssBaseline';
 import theme from '@/theme/theme';
 import Navbar from '@/components/Navbar/Navbar';
 import Footer from '@/components/Footer/Footer';
+import Head from 'next/head';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -18,6 +19,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <Head>
+        <title>KRM College | Excellence in Education</title>
+        <meta name="description" content="Kedarnath Ramswaroop Mahavidyalaya - Affiliated to Bundelkhand University, Jhansi. Empowering students through quality education, moral values, and holistic development." />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+      </Head>
       <body className={inter.className}>
         <ThemeProvider theme={theme}>
           <CssBaseline />
