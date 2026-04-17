@@ -152,7 +152,7 @@ const Courses: React.FC = () => {
           </Typography>
         </Box>
 
-        <Grid container spacing={4}>
+        <Grid container spacing={4} sx={{ mb: 10 }}>
           {courses.map((course, index) => (
             <Grid item xs={12} md={6} key={index}>
               <Card
@@ -255,6 +255,212 @@ const Courses: React.FC = () => {
             </Grid>
           ))}
         </Grid>
+
+        {/* Fee Refund Policy Section */}
+        <Box id="refund-policy" sx={{ mt: 4 }}>
+          <Box sx={{ textAlign: 'center', mb: 5 }}>
+            <Typography
+              variant="h2"
+              component="h2"
+              gutterBottom
+              sx={{
+                color: 'primary.main',
+                fontWeight: 700,
+                mb: 3,
+              }}
+            >
+              Our Fee Refund Policy
+            </Typography>
+            <Typography
+              variant="body1"
+              sx={{
+                color: 'text.secondary',
+                maxWidth: '900px',
+                mx: 'auto',
+                lineHeight: 1.8,
+                fontSize: '1.05rem',
+              }}
+            >
+              At KRM College, we follow the University Grants Commission (UGC)
+              Guidelines for Fee Refund to ensure a student-friendly and transparent
+              fee refund process. These guidelines apply in case a student decides
+              to withdraw from admission after the payment of fees.
+            </Typography>
+          </Box>
+
+          <Box sx={{ mb: 5 }}>
+            <Typography
+              variant="h4"
+              component="h3"
+              sx={{
+                color: 'text.primary',
+                fontWeight: 600,
+                mb: 3,
+                textAlign: 'center',
+              }}
+            >
+              Refund Structure
+            </Typography>
+            <TableContainer
+              component={Paper}
+              elevation={0}
+              sx={{
+                maxWidth: '900px',
+                mx: 'auto',
+                border: '1px solid',
+                borderColor: 'divider',
+                borderRadius: 2,
+              }}
+            >
+              <Table>
+                <TableHead>
+                  <TableRow sx={{ backgroundColor: 'rgba(183, 28, 28, 0.05)' }}>
+                    <TableCell
+                      sx={{
+                        fontWeight: 700,
+                        color: 'text.primary',
+                        fontSize: '1rem',
+                        width: '30%',
+                      }}
+                    >
+                      Refund Percentage
+                    </TableCell>
+                    <TableCell
+                      sx={{
+                        fontWeight: 700,
+                        color: 'text.primary',
+                        fontSize: '1rem',
+                      }}
+                    >
+                      Conditions
+                    </TableCell>
+                  </TableRow>
+                </TableHead>
+                <TableBody>
+                  {[
+                    {
+                      percentage: '100%',
+                      condition:
+                        'Withdrawal up to 15 days before commencement of the academic session (₹1,000 processing fee may be deducted).',
+                    },
+                    {
+                      percentage: '90%',
+                      condition: 'Withdrawal less than 15 days before the session starts.',
+                    },
+                    {
+                      percentage: '80%',
+                      condition: 'Withdrawal within 15 days after the session starts.',
+                    },
+                    {
+                      percentage: '50%',
+                      condition: 'Withdrawal between 16–30 days after the session starts.',
+                    },
+                    {
+                      percentage: 'No Refund',
+                      condition: "Withdrawal after 30 days of the session's commencement.",
+                    },
+                  ].map((row, index) => (
+                    <TableRow
+                      key={index}
+                      sx={{
+                        '&:nth-of-type(odd)': {
+                          backgroundColor: 'rgba(0, 0, 0, 0.02)',
+                        },
+                        '&:last-child td, &:last-child th': {
+                          border: 0,
+                        },
+                      }}
+                    >
+                      <TableCell
+                        sx={{
+                          py: 2.5,
+                          fontWeight: 600,
+                          color: 'primary.main',
+                          fontSize: '1rem',
+                        }}
+                      >
+                        {row.percentage}
+                      </TableCell>
+                      <TableCell sx={{ py: 2.5, lineHeight: 1.6 }}>
+                        {row.condition}
+                      </TableCell>
+                    </TableRow>
+                  ))}
+                </TableBody>
+              </Table>
+            </TableContainer>
+          </Box>
+
+          <Box
+            sx={{
+              maxWidth: '900px',
+              mx: 'auto',
+              p: { xs: 3, md: 4 },
+              backgroundColor: 'rgba(183, 28, 28, 0.03)',
+              borderRadius: 2,
+              border: '1px solid',
+              borderColor: 'rgba(183, 28, 28, 0.1)',
+            }}
+          >
+            <Typography
+              variant="h5"
+              component="h3"
+              sx={{
+                color: 'text.primary',
+                fontWeight: 600,
+                mb: 2.5,
+              }}
+            >
+              Additional Notes
+            </Typography>
+            <Box component="ul" sx={{ pl: 3, m: 0, mb: 3 }}>
+              {[
+                'Refunds must be processed by the institution within 15 days of receiving the withdrawal application.',
+                'The refund policy will be clearly displayed during the admission process and in the prospectus.',
+                'In case of unresolved issues, students may escalate the matter to the University Grants Commission (UGC).',
+              ].map((note, index) => (
+                <Typography
+                  key={index}
+                  component="li"
+                  variant="body1"
+                  sx={{
+                    color: 'text.secondary',
+                    mb: 1.5,
+                    lineHeight: 1.7,
+                    '&:last-child': { mb: 0 },
+                  }}
+                >
+                  {note}
+                </Typography>
+              ))}
+            </Box>
+            <Typography
+              variant="body2"
+              sx={{
+                color: 'text.secondary',
+                fontStyle: 'italic',
+                textAlign: 'center',
+              }}
+            >
+              For further details, please visit the official{' '}
+              <Box
+                component="a"
+                href="https://www.ugc.gov.in"
+                target="_blank"
+                rel="noopener noreferrer"
+                sx={{
+                  color: 'primary.main',
+                  textDecoration: 'underline',
+                  fontWeight: 600,
+                  '&:hover': { opacity: 0.8 },
+                }}
+              >
+                UGC website
+              </Box>
+              .
+            </Typography>
+          </Box>
+        </Box>
       </Container>
 
       {/* Fee Structure Dialog */}
